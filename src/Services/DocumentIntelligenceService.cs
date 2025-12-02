@@ -98,6 +98,7 @@ public class DocumentIntelligenceService : IDocumentIntelligenceService
         data.InsuranceCompany = GetFieldValue(fields, "InsuranceCompany");
         data.InsuranceFaxNumber = GetFieldValue(fields, "InsuranceFaxNumber");
         data.SenderFaxNumber = GetFieldValue(fields, "SenderFaxNumber");
+        data.SenderName = GetFieldValue(fields, "SenderName");
 
         LogExtractedFields(data);
 

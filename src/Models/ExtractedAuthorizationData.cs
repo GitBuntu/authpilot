@@ -162,4 +162,10 @@ public class ExtractedAuthorizationData
     /// </summary>
     [BsonElement("senderFaxNumber")]
     public string? SenderFaxNumber { get; set; }
+
+    /// <summary>
+    /// Sender's name/organization (FROM field)
+    /// </summary>
+    [BsonElement("senderName")]
+    public string? SenderName { get; set; }
 }
