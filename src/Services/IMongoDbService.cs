@@ -26,4 +26,9 @@ public interface IMongoDbService
     /// Retrieves an authorization document by its ID
     /// </summary>
     Task<AuthorizationDocument?> GetAuthorizationByIdAsync(string documentId);
+    
+    /// <summary>
+    /// Checks if a blob has already been processed (idempotency check)
+    /// </summary>
+    Task<bool> IsBlobAlreadyProcessedAsync(string blobName);
 }

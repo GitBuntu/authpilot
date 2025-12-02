@@ -111,4 +111,26 @@ public class MongoDbService : IMongoDbService
             throw;
         }
     }
+
+    public async Task<bool> IsBlobAlreadyProcessedAsync(string blobName)
+    {
+        try
+        {
+            var filter = Builders<AuthorizationDocument>.Filter.Eq(d => d.BlobName, blobName);
+            var existingDoc = await _collection.Find(filter).FirstOrDefaultAsync();
+            
+            if (existingDoc != null)
+            {
+                _logger.LogInformation("Blob {BlobName} already processed (Document ID: {Id})", blobName, existingDoc.Id);
+                return true;
+            }
+            
+            return false;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to check if blob already processed: {BlobName}", blobName);
+            throw;
+        }
+    }
 }
