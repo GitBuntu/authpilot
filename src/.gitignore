@@ -1,0 +1,38 @@
+# Build results
+bin/
+obj/
+
+# Local settings (contains secrets)
+local.settings.json
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio folders
+.vs/
+.vscode/
+
+# Rider
+.idea/
+
+# Azure Functions Core Tools
+.azure-functions-core-tools/
+
+# Test results
+TestResults/
+*.trx
+
+# NuGet packages
+*.nupkg
+packages/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
