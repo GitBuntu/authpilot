@@ -118,10 +118,25 @@ public class ExtractedAuthorizationData
     // ===== Clinical Information =====
     
     /// <summary>
-    /// Clinical justification notes
+    /// Clinical justification notes (page 1)
     /// </summary>
     [BsonElement("clinicalNotes")]
     public string? ClinicalNotes { get; set; }
+
+    /// <summary>
+    /// Clinical justification notes (page 2, if present)
+    /// </summary>
+    [BsonElement("clinicalNotes2")]
+    public string? ClinicalNotes2 { get; set; }
+
+    /// <summary>
+    /// Combined clinical notes from all pages
+    /// </summary>
+    [BsonIgnore]
+    public string? FullClinicalNotes => 
+        string.IsNullOrEmpty(ClinicalNotes2) 
+            ? ClinicalNotes 
+            : $"{ClinicalNotes} {ClinicalNotes2}".Trim();
 
     // ===== Administrative Information =====
     

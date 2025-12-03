@@ -88,6 +88,7 @@ public class DocumentIntelligenceService : IDocumentIntelligenceService
 
         // Clinical fields
         data.ClinicalNotes = GetFieldValue(fields, "ClinicalNotes");
+        data.ClinicalNotes2 = GetFieldValue(fields, "ClinicalNotes2");
 
         // Administrative fields
         data.FaxReceivedDate = GetFieldDateValue(fields, "FaxReceivedDate");
