@@ -33,6 +33,9 @@ public class MongoDbService : IMongoDbService
 
     public async Task<string> CreateAuthorizationDocumentAsync(string blobName, string fileName, DateTime uploadedAt)
     {
+        ArgumentNullException.ThrowIfNull(blobName, nameof(blobName));
+        ArgumentNullException.ThrowIfNull(fileName, nameof(fileName));
+        
         try
         {
             var document = new AuthorizationDocument
